@@ -1,0 +1,5 @@
+<div class="containerDiv">
+  <input (click)="onToggle(todo)" type="checkbox">
+  <span [ngClass]="applyClass()">{{todo.title}}</span>
+  <button (click)="onDelete(todo)" class="btn-danger">delete</button>
+</div>
