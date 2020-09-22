@@ -13,7 +13,7 @@ const httpHeaders = {
   providedIn: 'root'
 })
 export class TodoService {
-  url = 'http://jsonplaceholder.typicode.com/todos'
+  url = 'http://jsonplaceholder.typicode.com/todos/?_limit=5'
   constructor(private http: HttpClient) { }
 
 
@@ -29,6 +29,8 @@ export class TodoService {
     const url = `${this.url}/${todo.id}`
     return this.http.delete(url, httpHeaders)
   }
-
+  addTodo(todo): Observable<Todo> {
+    return this.http.post<Todo>(this.url, todo, httpHeaders)
+  }
 
 }

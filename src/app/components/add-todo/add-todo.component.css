@@ -1,0 +1,10 @@
+.form{
+  display: flex;
+}
+
+input{
+  flex: 10;
+}
+button{
+  flex: 3;
+}
